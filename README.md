@@ -1,2 +1,2 @@
 # BToBecomeBiggerThanA
-Basic as hell math to increase two numbers and their powers until one becomes larger than the other
+Basic as hell math to increase two numbers and their powers until B's set becomes larger than the A's set

@@ -1,20 +1,12 @@
 #include "headers.h"
 
-// A: 1^0 B: 0^1 
-
 int TestNumber = 1;
-
-
-
-
-struct TestVars{
-    double AResults;
-    double BResults; 
-    int A1 = 1;
-    int A2;
-    int B1; 
-    int B2 = 1;
-}
+struct{
+    int Integer;
+    int Powers;
+    double Results;
+    // A: 1^0 B: 0^1 
+}A, B;
 
 int FileWrite()
 {
@@ -26,8 +18,8 @@ int FileWrite()
     
         // Write the results to the file
         outputFile << "Test Number: " << TestNumber << "\n\n"
-        << " A1= " << A1 << "\n\n" << " A2= " << A2 << "\n\n" << " A Results are: " << AResults
-        << "\n\n" << " B1= " << B1 << "\n\n" << " B2= " << B2 << "\n\n" << " B Results are: " << BResults << "\n\n";
+        << " A1= " << A.Integer << "\n\n" << " A2= " << A.Powers << "\n\n" << " A Results are: " << A.Results
+        << "\n\n" << " B1= " << B.Integer << "\n\n" << " B2= " << B.Powers << "\n\n" << " B Results are: " << B.Results << "\n\n";
         outputFile.close();
     }
 
@@ -42,9 +34,10 @@ int FileWrite()
 
 int main()
 {
-    // std::remove("results.txt"); use this if you need to iterate quickly
+    std::remove("results.txt"); // use this if you need to iterate quickly
     std::ofstream outputFile("results.txt", std::ios::app);
-
+    A.Integer++;
+    B.Powers++;
     if (outputFile.is_open())
     {
     outputFile << "Test for when or if B would be come bigger than A when made to a power\n\n\n\n";
@@ -58,17 +51,19 @@ int main()
 
     while (TRUE)
     {
+
+
         // calculates the powers into a whole number 
-        TestVars.AResults = pow(A1,A2);
-        BResults = pow(B1,B2);
+        A.Results = pow(A.Integer,A.Powers);
+        B.Results = pow(B.Integer,B.Powers);
         FileWrite();    
 
-        if(AResults > BResults) // adds 1 and runs the test again
+        if(A.Results > B.Results) // adds 1 and runs the test again
         {
-            A1++;
-            A2++;
-            B1++;
-            B2++;
+            A.Integer++;
+            A.Powers++;
+            B.Integer++;
+            B.Powers++;
             TestNumber++;
         }
         else

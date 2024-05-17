@@ -38,15 +38,16 @@ int main()
     std::ofstream outputFile("results.txt", std::ios::app);
     A.Integer++;
     B.Powers++;
+    
     if (outputFile.is_open())
     {
-    outputFile << "Test for when or if B would be come bigger than A when made to a power\n\n\n\n";
-    outputFile.close();
-    // header infomation
+        outputFile << "Test for when or if B would be come bigger than A when made to a power\n\n\n\n";
+        outputFile.close();
+         // header infomation
     }
     else
     {
-    std::cerr << "Can't open file to write to" << std::endl;
+        std::cerr << "Can't open file to write to" << std::endl;
     }
 
     while (TRUE)
@@ -71,6 +72,7 @@ int main()
         break;
         }
     }
+    
     std::cout <<"Press any key to close the program";
     std::cin.get();
     return 0;

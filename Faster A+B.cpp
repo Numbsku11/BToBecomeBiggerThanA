@@ -1,14 +1,20 @@
 #include "headers.h"
 
-int A1 = 1;
-int A2;
-int B1; 
-int B2 = 1;
 // A: 1^0 B: 0^1 
 
 int TestNumber = 1;
-double AResults;
-double BResults; 
+
+
+
+
+struct TestVars{
+    double AResults;
+    double BResults; 
+    int A1 = 1;
+    int A2;
+    int B1; 
+    int B2 = 1;
+}
 
 int FileWrite()
 {
@@ -53,7 +59,7 @@ int main()
     while (TRUE)
     {
         // calculates the powers into a whole number 
-        AResults = pow(A1,A2);
+        TestVars.AResults = pow(A1,A2);
         BResults = pow(B1,B2);
         FileWrite();    
 

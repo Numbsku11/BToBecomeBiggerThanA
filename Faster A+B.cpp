@@ -34,7 +34,7 @@ int FileWrite()
 
 int main()
 {
-    std::remove("results.txt"); // use this if you need to iterate quickly
+    //std::remove("results.txt"); // use this if you need to iterate quickly
     std::ofstream outputFile("results.txt", std::ios::app);
     A.Integer++;
     B.Powers++;
@@ -43,7 +43,7 @@ int main()
     {
         outputFile << "Test for when or if B would be come bigger than A when made to a power\n\n\n\n";
         outputFile.close();
-         // header infomation
+        // header infomation
     }
     else
     {
